@@ -1,0 +1,7 @@
+apiVersion: servicecatalog.k8s.io/v1alpha1
+kind: Broker
+metadata:
+  name: redis-broker
+  namespace: fission
+spec:
+  url: http://redis-broker-redis-broker.redis-broker.svc.cluster.local
