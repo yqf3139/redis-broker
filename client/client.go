@@ -1,9 +1,8 @@
 package client
 
 import (
-	yaml "gopkg.in/yaml.v2"
+	"gopkg.in/yaml.v2"
 
-	"github.com/dchest/uniuri"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
 	"k8s.io/helm/pkg/helm"
@@ -17,7 +16,7 @@ const (
 // Install creates a new Redis chart release
 func Install(releaseName, namespace string) error {
 	vals, err := yaml.Marshal(map[string]interface{}{
-		"redisPassword": uniuri.New(),
+		"redisPassword": "123",//uniuri.New(),
 	})
 	if err != nil {
 		return err
